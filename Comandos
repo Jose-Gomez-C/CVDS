@@ -1,0 +1,11 @@
+// Generar archetype
+	mvn archetype:generate
+	Y
+
+// Compilar proyecto y pruebas
+	mvn package
+	
+	
+// Ejecutar pruebas
+	
+	
