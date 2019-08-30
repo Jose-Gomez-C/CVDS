@@ -1,1 +1,7 @@
 LaboratorioTres/ClasesEquivalencia/target/*
+
+
+# Package Files #
+*.classpath
+*.idea 
+*.settings
