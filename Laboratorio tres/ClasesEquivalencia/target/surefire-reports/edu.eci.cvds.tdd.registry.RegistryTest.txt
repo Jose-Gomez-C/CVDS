@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.eci.cvds.tdd.registry.RegistryTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in edu.eci.cvds.tdd.registry.RegistryTest
-validateRegistryResult(edu.eci.cvds.tdd.registry.RegistryTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError: expected:<VALID> but was:<UNDERAGE>
-	at edu.eci.cvds.tdd.registry.RegistryTest.validateRegistryResult(RegistryTest.java:17)
-
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in edu.eci.cvds.tdd.registry.RegistryTest

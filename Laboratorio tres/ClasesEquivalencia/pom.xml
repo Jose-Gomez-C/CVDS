@@ -25,6 +25,12 @@
 		<version>4.12</version>
 		<scope>test</scope>
 	</dependency>
+	<dependency>
+		<groupId>edu.eci.cvds</groupId>
+		<artifactId>aerodescuentos</artifactId>
+		<version>1.0.0</version>
+		<scope></scope>
+	</dependency>
   </dependencies>
 
   <build>
