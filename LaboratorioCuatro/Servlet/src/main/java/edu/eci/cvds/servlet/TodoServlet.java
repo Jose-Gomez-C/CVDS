@@ -41,6 +41,27 @@ public class TodoServlet extends HttpServlet{
 		}catch(Exception e) {
 			responseWriter.write("requerimiento inválido");
 		}
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	Writer responseWriter = resp.getWriter();
+    	try {   
+    		Optional<String> optName = Optional.ofNullable(req.getParameter("id"));
+		    String id = optName.isPresent() && !optName.get().isEmpty() ? optName.get() : "";
+		    int intId = Integer.parseInt(id); 
+		    Todo todo= Service.getTodo(intId);
+		    ArrayList<Todo> listaTodos = new ArrayList<Todo>();
+		    listaTodos.add(todo);
+		    //resp.setStatus(HttpServletResponse.SC_OK);
+		    responseWriter.write(Service.todosToHTMLTable(listaTodos));
+	    }catch (java.lang.NumberFormatException e) {
+			responseWriter.write("requerimiento inválido");
+		}catch (MalformedURLException e) {
+			responseWriter.write("error interno en el servidor");
+		}catch(Exception e) {
+			responseWriter.write("requerimiento inválido");
+		}
+    
    }
     
 }
