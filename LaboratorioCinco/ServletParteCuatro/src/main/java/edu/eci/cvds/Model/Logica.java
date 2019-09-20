@@ -11,32 +11,51 @@ import java.util.List;
 
 @ManagedBean(name="guessBean")
 @SessionScoped
+@ApplicationScoped
 public class Logica {
 	private int numeroAdivinar;
 	private int numeroIntentos;
 	private int puntaje;
 	private String estado;
+        private boolean estadoBol;
+        private List<Integer> intentos;
 	
 	
 	public Logica() {
-		numeroAdivinar=(int) ((Math.random() * ((11 - 1) + 1)) + 1);
+		numeroAdivinar=(int) ((Math.random() * ((10 - 1) + 1)) + 1);
 		puntaje=100000;
-		estado="F";
+		estado="Usted no ha ganado!";
 		numeroIntentos=0;
+                intentos= new ArrayList();
+                estadoBol = false;
 	}
 	public void guess(int numeroUsuario) {
-		if (numeroAdivinar!=numeroUsuario) {
-			puntaje-=10000;
+                if (estadoBol || puntaje == 0) {
+                    return;
+                }
+                
+		if (numeroAdivinar != numeroUsuario) {
+                        puntaje-=10000;
 			numeroIntentos+=1;
-		}else {
-			estado="T";
+                        if (!intentos.contains(numeroUsuario)) intentos.add(numeroUsuario);
+		} else {
+			estado="Usted ha ganado, adivino el número!";
+                        if (!intentos.contains(numeroUsuario)) intentos.add(numeroUsuario);
+                        estadoBol = true;
 		}
+                
+                for (int i = 0; i < intentos.size(); i++) {
+                    System.out.print(intentos.get(i) + " ");
+                }
+                System.out.println();
 	}
 	public void restart() {
-		estado = "F";
+		estado = "Usted no ha ganado!";
 		numeroAdivinar=(int) ((Math.random() * ((11 - 1) + 1)) + 1);
 		puntaje=100000;
 		numeroIntentos=0;
+                intentos=new ArrayList();
+                estadoBol = false;
 	}
 	public int getNumeroAdivinar() {
 		return numeroAdivinar;
@@ -62,4 +81,9 @@ public class Logica {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+        public List<Integer> getIntentos(){
+            return intentos;
+        }
+        
+        
 }
