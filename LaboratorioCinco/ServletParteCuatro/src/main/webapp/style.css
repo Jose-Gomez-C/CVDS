@@ -1,0 +1,27 @@
+#guess_form{
+	position:absolute;
+	right:50%;
+}
+#panel{
+	position:relative;
+	left:50%;
+}
+.lista{
+	border:1.5px solid black;
+	font-size:30px;
+	background-color:SpringGreen;
+	opacity:0.8;color:black;
+}
+
+.adivinar{
+	display:none;
+	position:relative;
+}
+.titulo{
+	font-size:26px;
+}
+.mensajeA{
+	color:red;
+	font-weight:bold;
+	
+}

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
- <h:head> HELLO </h:head>
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  
+ 	<h:head> HELLsO </h:head>
  
-<h:body>
-	<h:form id="guess_form">
-	
-	</h:form>
-	<p:outputLabel display: none>
-	<p:inputText>
-	
-</h:body> 
+ 
+	<h:body>
+		<h:form id="guess_form">
+				
+			<P:inputText /t style="width: 287px; height: 29px; ">
+			PrimeFaces<p:inputText id="numero" />
+			<p:outputLabel> Digite numero</p:outputLabel>
+			
+
+			<p:outputLabel for "numeroAdivinar" value="Standar Label:" style="display: none;"></p:outputLabel>
+			<p:inputText id="name" required="true" /><p:inputText>
+			<p:outputLabel for "numeroIntentos" value="#{guessBean.numeroIntentos}"></p:outputLabel>
+			<p:outputLabel for "EstadoJuego" value="#{guessBean.estado}"></p:outputLabel>
+			<p:outputLabel for "premio" value="#{guessBean.puntaje}"></p:outputLabel>
+			<p:commandButton id="aceptar" ></p:commandButton>
+			<p:commandButton id="reiniciar"></p:commandButton>
+		
+		</h:form>
+	</h:body> 
 
 </html>
