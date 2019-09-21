@@ -10,7 +10,6 @@ import java.util.List;
 
 
 @ManagedBean(name="guessBean")
-@SessionScoped
 @ApplicationScoped
 public class Logica {
 	private int numeroAdivinar;
@@ -44,10 +43,6 @@ public class Logica {
                         estadoBol = true;
 		}
                 
-                for (int i = 0; i < intentos.size(); i++) {
-                    System.out.print(intentos.get(i) + " ");
-                }
-                System.out.println();
 	}
 	public void restart() {
 		estado = "Usted no ha ganado!";
